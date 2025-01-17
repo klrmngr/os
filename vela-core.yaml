@@ -23,7 +23,7 @@ pipeline:
   - uses: go/build
     with:
       output: vela-core
-      ldflags: -s -w -X 'github.com/oam-dev/kubevela/version.VelaVersion=v${{package.version}}' -X 'github.com/oam-dev/kubevela/version.GitRevision=$(git rev-parse HEAD)'
+      ldflags: -w -X 'github.com/oam-dev/kubevela/version.VelaVersion=v${{package.version}}' -X 'github.com/oam-dev/kubevela/version.GitRevision=$(git rev-parse HEAD)'
       packages: ./cmd/core/
 
   - uses: strip
